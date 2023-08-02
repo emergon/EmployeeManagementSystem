@@ -1,5 +1,7 @@
 package org.example;
 
+import java.time.LocalDate;
+
 public class EmployeeManagementSystemDemo {
 
     public static void main(String[] args) {
@@ -70,5 +72,35 @@ public class EmployeeManagementSystemDemo {
         System.out.println("\nAfter updating details:");
         managementSystem.displayAllEmployees();
 
+
+        // Create projects
+        Project proj1 = new Project("Project 1", LocalDate.of(2023, 8, 31), Priority.MEDIUM);
+        Project proj2 = new Project("Project 2", LocalDate.of(2023, 7, 15), Priority.HIGH);
+        Project proj3 = new Project("Project 3", LocalDate.of(2023, 6, 30), Priority.LOW);
+        Project proj4 = new Project("Project 4", LocalDate.of(2023, 9, 20), Priority.HIGH);
+        Project proj5 = new Project("Project 5", LocalDate.of(2023, 8, 1), Priority.MEDIUM);
+
+
+        // Add projects to employees
+        emp1.addProject(proj1);
+        emp1.addProject(proj3);
+        emp1.addProject(proj4);
+
+        emp2.addProject(proj2);
+        emp2.addProject(proj3);
+        emp2.addProject(proj5);
+
+        emp3.addProject(proj1);
+        emp3.addProject(proj2);
+        emp3.addProject(proj4);
+
+        // Display projects of each employee
+        managementSystem.displayEmployeeProjects(emp1);
+        managementSystem.displayEmployeeProjects(emp2);
+        managementSystem.displayEmployeeProjects(emp3);
+
+        managementSystem.sortProjectsByDueDate();
+        managementSystem.sortProjectsByPriority();
     }
+
 }

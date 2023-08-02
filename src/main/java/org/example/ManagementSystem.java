@@ -1,9 +1,6 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Optional;
+import java.util.*;
 
 /**
  * The ManagementSystem class represents a system for managing employees in a company.
@@ -125,6 +122,69 @@ public class ManagementSystem {
             return true;
         } else {
             return false;
+        }
+    }
+
+    /**
+     * Displays the projects of a specific employee.
+     *
+     * @param employee The employee whose projects to display.
+     */
+    public void displayEmployeeProjects(Employee employee) {
+        if (employee == null) {
+            System.out.println("Employee not found.");
+        } else {
+            System.out.println("Projects of Employee " + employee.getName() + ":");
+            for (Project project : employee.getProjects()) {
+                System.out.println(project);
+            }
+        }
+    }
+
+    /**
+     * Sorts and displays all projects in the management system by due date.
+     */
+    public void sortProjectsByDueDate() {
+        Set<Project> allProjects = new HashSet<>();
+
+        // Collect all projects from employees and store them in a HashSet
+        for (Employee employee : employees) {
+            allProjects.addAll(employee.getProjects());
+        }
+
+        // Copy projects to TreeSet and sort by due date
+        TreeSet<Project> sortedProjectsByDueDate = new TreeSet<>(Comparator.comparing(Project::getDueDate));
+        sortedProjectsByDueDate.addAll(allProjects);
+
+        // Display sorted projects
+        System.out.println("\nProjects sorted by Due Date:");
+        for (Project project : sortedProjectsByDueDate) {
+            System.out.println(project);
+        }
+    }
+
+    /**
+     * Sorts and displays all projects in the management system first by priority and then by due date.
+     */
+    public void sortProjectsByPriority() {
+        Set<Project> allProjects = new HashSet<>();
+
+        // Collect all projects from employees and store them in a HashSet
+        for (Employee employee : employees) {
+            allProjects.addAll(employee.getProjects());
+        }
+
+        // Copy projects to TreeSet and sort by priority
+        TreeSet<Project> sortedProjectsByPriority = new TreeSet<>(
+                Comparator.comparing(Project::getPriority)
+                        .thenComparing(Project::getDueDate)
+        );
+        sortedProjectsByPriority.addAll(allProjects);
+
+        // Display sorted projects
+        System.out.println("\nProjects sorted by Priority:");
+        for (Project project : sortedProjectsByPriority) {
+            System.out.println(project);
         }
     }
 }

@@ -1,6 +1,8 @@
 package org.example;
 
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 public class Employee {
 
@@ -8,12 +10,14 @@ public class Employee {
     private String name;
     private String department;
     private double salary;
+    private Set<Project> projects;
 
     public Employee(int id, String name, String department, double salary) {
         this.id = id;
         this.name = name;
         this.department = department;
         this.salary = salary;
+        this.projects = new HashSet<>();
     }
 
     public int getId() {
@@ -48,6 +52,17 @@ public class Employee {
         this.salary = salary;
     }
 
+    public Set<Project> getProjects() {
+        return projects;
+    }
+
+    public void addProject(Project project) {
+        projects.add(project);
+    }
+
+    public void removeProject(Project project){
+        projects.remove(project);
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

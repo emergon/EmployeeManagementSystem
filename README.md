@@ -1,36 +1,24 @@
-# Homework Exercise for Java Lists
+# Employee Management System
 
-## Exercise Title: Employee Management System - ArrayList Implementation
+Welcome to the Employee Management System project! This repository contains two separate exercises:
 
-### Description:
-In this exercise, you are tasked with implementing an Employee Management System using `ArrayList` to store employee data. You will create classes to represent employees and build functionalities to add, remove, and display employee information.
+1. [List Assignment](List-Assignment.md)
+2. [Set Assignment](Set-Assignment.md)
 
-### Instructions:
+## List Assignment
 
-1. Define an `Employee` class with the following attributes:
-    - Employee ID (int)
-    - Name (String)
-    - Department (String)
-    - Salary (double)
+The **List Assignment** exercise focuses on implementing an Employee Management System using `ArrayList` to store employee data. It involves creating classes to represent employees and building functionalities to add, remove, display, and search employee information. Additionally, there are optional challenges to implement error handling and sorting employees based on salary.
 
-2. Create a `ManagementSystem` class that uses an `ArrayList` to store instances of `Employee`.
+Please see the [List Assignment](List-Assignment.md) file for detailed instructions and the exercise tasks.
 
-3. Implement the following methods in the `ManagementSystem` class:
-    - `addEmployee(Employee employee)`: Add an employee to the system.
-    - `removeEmployee(int employeeId)`: Remove an employee from the system based on their ID.
-    - `displayAllEmployees()`: Display the information of all employees in the system.
-    - `findEmployeeById(int employeeId)`: Find and display an employee's information based on their ID.
+## Set Assignment
 
-4. Create a main program to demonstrate the functionalities of the `ManagementSystem` class.
-    - Add a few employees to the system.
-    - Remove an employee using their ID.
-    - Display the details of all employees.
-    - Search for an employee using their ID.
+The **Set Assignment** exercise revolves around extending the Employee Management System to include projects for each employee. Projects are stored in a `HashSet`, and functionalities for sorting projects based on due date and priority are added using `TreeSet`.
 
-### Additional Challenges (Optional):
+To explore this exercise further, refer to the [Set Assignment](Set-Assignment.md) file.
 
-1. Implement error handling to handle cases where an employee ID does not exist or is duplicated.
-2. Sort the employees based on their salary in ascending order using `Collections.sort()`.
-3. Add functionality to update an employee's details (e.g., salary, department, name).
+## Additional Information
 
-Remember to use object-oriented principles to complete the exercise.
+Feel free to navigate to the respective files to understand the specific details and tasks of each exercise. If you have any questions or need further assistance, don't hesitate to reach out.
+
+Happy coding!
